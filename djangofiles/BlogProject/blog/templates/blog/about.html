@@ -1,0 +1,59 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<div class="content">
+        
+        <h1>About Us</h1>
+        <p>Every student goes to google for new project ideas, be it the final step of graduating out of a college
+        or just to improve understanding of the subject in their leisure time. Well, we think that we might
+        have solved their problem.<br><br>
+        <strong>Tricalidee</strong> is a site which allows such students to browse through the projects submitted
+                and also avoid the pitfalls their predecessor fell into while doing
+        the respective project. The blog also enables users to post new ideas so many future generations can benefit from them.</p>
+</div>
+<div class="team-section">
+                <h1>Our team</h1>
+                <span class="border"></span>
+                <div class="ps">
+                  <a href="#p1"><img src="{% static 'blog/Author.jpg' %}" alt=""> </a>
+                  <a href="#p2"><img src="{% static 'blog/Aishwarya.jpg' %}" alt=""> </a>
+                  <a href="#p3"><img src="{% static 'blog/manvith1.jpg' %}" alt=""> </a>
+                  <a href="#p4"><img src="{% static 'blog/Omkar.jpg' %}" alt=""> </a>
+          
+          
+                </div>
+                <div class="section" id="p1">
+                  <span class="name">Kanza Nassabi</span>
+                  <span class="border"></span>
+                  <p>
+                    Kanza.nassabi@stud.thd-deg.de
+                  </p>
+                </div>
+          
+                <div class="section" id="p2">
+                  <span class="name">Aishwarya Passi</span>
+                  <span class="border"></span>
+                  <p>
+                    Aishwarya.passi@stud.thd-deg.de
+                  </p>
+                </div>
+          
+                <div class="section" id="p3">
+                  <span class="name">Manvith Penklagar</span>
+                  <span class="border"></span>
+                  <p>
+                    Manvith.Penklagar@stud.thd-deg.de
+                  </p>
+                </div>
+          
+                <div class="section" id="p4">
+                  <span class="name">Omkar Ralhan</span>
+                  <span class="border"></span>
+                  <p>
+                    Omkar.ralhan@stud.thd-deg.de
+                  </p>
+                </div>
+</div>
+{% endblock content %}
+
+

@@ -1,0 +1,11 @@
+python manage.py shell
+from blog.models import Post, User
+objct = User.objects.get(username = 'admin')
+
+
+i = 1
+for i in range(0,10000):
+ i += 1
+ a = Post(Author = objct,Title = "title", content ="eMobility",
+ time_of_publishment=timezone.now(), time_of_modification = timezone.now())
+ a.save()

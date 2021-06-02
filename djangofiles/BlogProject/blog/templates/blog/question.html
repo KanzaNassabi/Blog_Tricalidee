@@ -1,0 +1,34 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="content-section">
+                <ul class="list-group">
+                    {% for question in questions %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <a href="#" >{{ question.question_title }}&nbsp</a>
+                            &nbsp&nbsp<span class="badge badge-primary badge-pill">{{question.answer.count}}</span>
+                        </li>
+                        <ul class="list-group list-group-flush">
+                                {% for answer in question.answer %}
+                                    <span class="badge-light">
+                                        <li class="list-group-item">
+                                            <span class="badge badge-secondary">{{ answer.posted_by }}:</span>
+                                            &nbsp&nbsp{{ answer.answer_content }}
+                                            <small class="text-muted" >&nbsp&nbsp published {{answer.date_posted}}</small>
+                                        </li>
+                                    </span>                                               
+                                {% endfor %}
+                                <form class="form-group" method="post" enctype="multipart/form-data" action="{% url 'new_answer'  %}">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="hidden" id="qid" name="qid" value="{{question.qid}}">
+                                    <input class="btn btn-primary btn-sm" type="submit" value="submit" />
+                                </form>
+                        </ul>
+                        <hr/>
+                    {% endfor %}
+                </ul>
+
+    </div>
+    {% endblock content %}

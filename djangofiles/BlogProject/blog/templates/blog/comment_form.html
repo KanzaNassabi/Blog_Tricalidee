@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="wrapper row3">
+  <article class="hoc container clear">
+    <!-- ################################################################################################ -->
+      <p class="nospace font-xs"> </p>
+      <h3 class="heading">New Comment</h3>
+      <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="save btn btn-default">Comment</button>
+      </form>
+        <script>var editor = new MediumEditor('.editable');</script>
+    <!-- ################################################################################################ -->
+  </article>
+</div>
+{% endblock %}
